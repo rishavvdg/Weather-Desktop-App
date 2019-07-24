@@ -1,31 +1,7 @@
-<?php
-    
-    $weather = "";
-    $error = "";
-    
-    if ($_GET['city']) {
-        
-		$urlContents =
-     $urlContents = file_get_contents ("https://samples.openweathermap.org/data/2.5/weather?q=".$_GET['city'].",uk&appid=9905e2e117b3127867acc90b617d2ebd");
-        
-        $weatherArray = json_decode($urlContents, true);
-        
-        if ($weatherArray['cod'] == 200) {
-        
-            $weather = "The weather in ".$_GET['city']." is currently '".$weatherArray['weather'][0]['description']."'. ";
-
-            
-        
-    }
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags always come first -->
+    <!-- A weather desktop application using API -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
